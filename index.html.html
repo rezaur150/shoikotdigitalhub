@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoikot Digital Hub - Meta Ads & SMM Expert</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration and Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#030712',
+                            card: '#0B0F19',
+                            primary: '#4F46E5', /* Indigo */
+                            secondary: '#06B6D4', /* Cyan */
+                            accent: '#10B981', /* Emerald */
+                            metaBlue: '#1877F2' /* Meta Blue */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #F3F4F6;
+            overflow-x: hidden;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #818CF8 0%, #34D399 50%, #22D3EE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #06B6D4 0%, #10B981 100%);
+            box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4);
+        }
+        .glass-panel {
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(6, 182, 212, 0.15);
+        }
+        
+        /* Core high-performance scroll slide animations */
+        .reveal-slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-active {
+            opacity: 1 !important;
+            transform: translate(0) !important;
+        }
+
+        /* Staggered transition delay utilities */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Hide default scrollbar but keep functionality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex items-center justify-between glass-panel px-6 py-3.5 rounded-2xl shadow-xl">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-chart-line text-white text-lg"></i>
+                    </div>
+                    <span class="font-outfit font-extrabold text-xl tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                        Shoikot <span class="text-brand-secondary">Digital</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-sm font-medium text-gray-300 hover:text-brand-secondary transition-colors duration-200">Services</a>
+                    <a href="#calculator" class="text-sm font-medium text-gray-300 hover:text-brand-secondary transition-colors duration-200">ROI Calculator</a>
+                    <a href="#portfolio" class="text-sm font-medium text-gray-300 hover:text-brand-secondary transition-colors duration-200">Our Portfolio</a>
+                    <a href="#previewer" class="text-sm font-medium text-gray-300 hover:text-brand-secondary transition-colors duration-200">Ad Previewer</a>
+                    <a href="#faq" class="text-sm font-medium text-gray-300 hover:text-brand-secondary transition-colors duration-200">FAQs</a>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://www.facebook.com/shoikotdigital" target="_blank" rel="noopener" class="text-gray-400 hover:text-brand-metaBlue transition-colors duration-200 text-lg" title="Visit Facebook Page">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I%20want%20to%20discuss%20Meta%20Ads%20marketing%20for%20my%20business!" target="_blank" rel="noopener" class="btn-gradient px-5 py-2.5 rounded-xl font-bold text-xs tracking-wider uppercase text-white shadow-lg flex items-center gap-2">
+                        <i class="fa-solid fa-fire-flame-curved"></i> Get Free Strategy
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="md:hidden p-2 text-gray-400 hover:text-white transition-colors" id="mobileMenuBtn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div class="hidden md:hidden px-4" id="mobileMenu">
+            <div class="glass-panel mx-auto p-5 rounded-2xl mt-1 space-y-4 shadow-2xl flex flex-col items-stretch">
+                <a href="#services" class="mobile-link py-2 text-center text-gray-300 hover:text-brand-secondary font-medium border-b border-gray-800">Services</a>
+                <a href="#calculator" class="mobile-link py-2 text-center text-gray-300 hover:text-brand-secondary font-medium border-b border-gray-800">ROI Calculator</a>
+                <a href="#portfolio" class="mobile-link py-2 text-center text-gray-300 hover:text-brand-secondary font-medium border-b border-gray-800">Our Portfolio</a>
+                <a href="#previewer" class="mobile-link py-2 text-center text-gray-300 hover:text-brand-secondary font-medium border-b border-gray-800">Ad Previewer</a>
+                <a href="#faq" class="mobile-link py-2 text-center text-gray-300 hover:text-brand-secondary font-medium border-b border-gray-800">FAQs</a>
+                
+                <div class="pt-2 flex flex-col gap-3">
+                    <a href="https://drive.google.com/drive/folders/1tl-X1o2JNSBthRYmUfAbwJkvz2Vc--bJ?usp=drive_link" target="_blank" rel="noopener" class="w-full text-center py-2.5 px-4 rounded-xl font-semibold border border-dashed border-gray-700 hover:border-brand-secondary text-gray-300 text-sm transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-folder-open text-brand-secondary"></i> View Portfolio Folder
+                    </a>
+                    <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I%20want%20to%20discuss%20Meta%20Ads%20marketing%20for%20my%20business!" target="_blank" rel="noopener" class="w-full text-center py-2.5 px-4 rounded-xl font-bold bg-[#25D366] hover:bg-[#128C7E] text-white text-sm transition-colors flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH DEEP-SPACE GRAPHICS -->
+    <section id="home" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <!-- Visual Glow Orbs (Subtle background animation) -->
+        <div class="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-indigo-900/20 rounded-full blur-[120px] mix-blend-screen animate-blob"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[35vw] h-[35vw] max-w-[450px] max-h-[450px] bg-cyan-900/25 rounded-full blur-[100px] mix-blend-screen animate-blob animation-delay-2000"></div>
+        <div class="absolute top-1/2 right-1/3 w-[30vw] h-[30vw] max-w-[400px] max-h-[400px] bg-emerald-900/15 rounded-full blur-[110px] mix-blend-screen animate-blob animation-delay-4000"></div>
+
+        <!-- Grid Overlay Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f29370a_1px,transparent_1px),linear-gradient(to_bottom,#1f29370a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content Area (Slides from Left) -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-8 reveal-slide-left">
+                    <!-- High-Converting Hook Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-primary/30 text-xs sm:text-sm font-semibold tracking-wide text-indigo-300">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                        </span>
+                        🔥 Top-Rated Meta Ads & SMM Team
+                    </div>
+
+                    <!-- Main Catchy Headline -->
+                    <h1 class="font-outfit font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight">
+                        We Stop Scroll. <br>
+                        <span class="text-gradient">We Print Profit.</span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Quit wasting marketing budget on broken campaigns. At <strong class="text-brand-secondary">Shoikot Digital Hub</strong>, we engineer hyper-targeted Meta Ads and organic branding that capture attention, build trust, and multiply your business revenue.
+                    </p>
+
+                    <!-- CTAs Grid -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <!-- Primary WhatsApp CTA -->
+                        <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I'm%20interested%20in%20your%20Meta%20Ads%20service.%20Please%20share%20details!" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white btn-gradient flex items-center justify-center gap-3 shadow-xl transform active:scale-95 transition-transform">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Talk with Shoikot
+                        </a>
+                        
+                        <!-- Secondary Portfolio CTA -->
+                        <a href="https://drive.google.com/drive/folders/1tl-X1o2JNSBthRYmUfAbwJkvz2Vc--bJ?usp=drive_link" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-slate-900 border border-slate-800 hover:border-brand-secondary text-gray-300 hover:text-white transition-all flex items-center justify-center gap-3 transform active:scale-95">
+                            <i class="fa-regular fa-folder-open text-brand-secondary"></i> View Case Studies
+                        </a>
+                    </div>
+
+                    <!-- Quick Bullet Highlights -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-xs sm:text-sm text-gray-400">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-accent"></i> Facebook & Instagram Expert</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-accent"></i> Custom Pixel Integration</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-accent"></i> ROI Tracking Enabled</span>
+                    </div>
+                </div>
+
+                <!-- Right Visual Area: Live Agency Feature Cards (Slides from Right) -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center reveal-slide-right">
+                    <div class="w-full max-w-sm sm:max-w-md relative animate-float">
+                        <!-- Graphic Decorative Glow Border -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary to-brand-secondary opacity-30 rounded-3xl blur-2xl"></div>
+                        
+                        <!-- Main Preview Card -->
+                        <div class="relative glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/10">
+                            <!-- Header Info -->
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-white/10">
+                                        <i class="fa-brands fa-facebook-f text-brand-metaBlue text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm">Shoikot Agency Engine</h4>
+                                        <p class="text-xs text-brand-accent flex items-center gap-1">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-brand-accent inline-block animate-pulse"></span> Active campaigns
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-brand-secondary/10 text-brand-secondary font-bold px-3 py-1 rounded-full border border-brand-secondary/20">LIVE METRICS</span>
+                            </div>
+
+                            <!-- Live Counter Stats Simulated inside card -->
+                            <div class="space-y-6">
+                                <div class="p-4 rounded-2xl bg-brand-dark/50 border border-white/5">
+                                    <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                                        <span>Total Ad Revenue Tracked</span>
+                                        <span class="text-brand-accent"><i class="fa-solid fa-arrow-trend-up"></i> +145%</span>
+                                    </div>
+                                    <div class="text-2xl sm:text-3xl font-extrabold font-outfit" id="liveRev">$248,340</div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="p-3.5 rounded-xl bg-brand-dark/50 border border-white/5">
+                                        <p class="text-[10px] text-gray-400 uppercase tracking-wider">Average ROAS</p>
+                                        <p class="text-lg font-extrabold text-brand-secondary mt-0.5">3.85x</p>
+                                    </div>
+                                    <div class="p-3.5 rounded-xl bg-brand-dark/50 border border-white/5">
+                                        <p class="text-[10px] text-gray-400 uppercase tracking-wider">Total Leads</p>
+                                        <p class="text-lg font-extrabold text-brand-accent mt-0.5">14,281</p>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Mini progress bar simulating performance -->
+                                <div class="space-y-1.5">
+                                    <div class="flex items-center justify-between text-[11px] text-gray-400">
+                                        <span>Conversion Rate Optimization</span>
+                                        <span class="text-brand-secondary font-semibold">88% efficiency</span>
+                                    </div>
+                                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                                        <div class="bg-gradient-to-r from-brand-primary to-brand-secondary h-2 rounded-full w-[88%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Clickable Facebook CTA Overlay -->
+                            <div class="mt-6 pt-6 border-t border-white/5 flex items-center justify-between">
+                                <span class="text-xs text-gray-400">Check live updates:</span>
+                                <a href="https://www.facebook.com/shoikotdigital" target="_blank" rel="noopener" class="text-xs font-bold text-brand-metaBlue hover:underline flex items-center gap-1.5">
+                                    fb.com/shoikotdigital <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK STATS COUNTER BAR (Slides Up) -->
+    <section class="relative z-10 -mt-10 px-4 max-w-7xl mx-auto reveal-slide-up">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-secondary/5 rounded-full blur-3xl"></div>
+            
+            <div class="text-center p-2 border-r border-gray-800/60 last:border-0 md:border-r">
+                <div class="font-outfit text-3xl sm:text-4xl font-extrabold text-white mb-1">50+</div>
+                <div class="text-[11px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider">Active Partners</div>
+            </div>
+            <div class="text-center p-2 border-r border-gray-800/60 last:border-0 md:border-r">
+                <div class="font-outfit text-3xl sm:text-4xl font-extrabold text-brand-secondary mb-1">$80k+</div>
+                <div class="text-[11px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider">Ad Spend Managed</div>
+            </div>
+            <div class="text-center p-2 border-r border-gray-800/60 last:border-0 md:border-r">
+                <div class="font-outfit text-3xl sm:text-4xl font-extrabold text-brand-accent mb-1">4.2x</div>
+                <div class="text-[11px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider">Average ROAS</div>
+            </div>
+            <div class="text-center p-2 last:border-0">
+                <div class="font-outfit text-3xl sm:text-4xl font-extrabold text-indigo-400 mb-1">98%</div>
+                <div class="text-[11px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider">Client Retention</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header (Slides Up) -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-slide-up">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-secondary">Core Services</h2>
+                <h3 class="font-outfit font-extrabold text-3xl sm:text-4xl md:text-5xl">How We Grow Your Sales</h3>
+                <p class="text-gray-400 text-sm sm:text-base">We don't offer generic templates. We construct tailor-made acquisition funnels combining paid traffic, organic growth, and conversion design.</p>
+            </div>
+
+            <!-- Service Grid (Staggered Slide Up) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group reveal-slide-up delay-100">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-primary/10 rounded-bl-full transition-all duration-300 group-hover:scale-125"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary mb-6 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </div>
+                    <h4 class="font-outfit font-extrabold text-xl mb-3 text-white">Meta Ads Domination</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Complete campaign building inside Facebook & Instagram. From hyper-targeted lookalikes and interest-stacking to continuous A/B creative testing that lowers CPA.
+                    </p>
+                    <ul class="space-y-2 mb-6 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Advanced Pixel Setup & Conversion API</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Custom Audiences & Retargeting Funnels</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Rigorous Daily Budget Scaling</li>
+                    </ul>
+                    <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I'm%20interested%20in%20Meta%20Ads%20Domination%20services!" target="_blank" rel="noopener" class="text-xs font-bold text-brand-secondary group-hover:text-brand-accent transition-colors duration-200 flex items-center gap-2">
+                        Start Meta Campaign <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group reveal-slide-up delay-200">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-secondary/10 rounded-bl-full transition-all duration-300 group-hover:scale-125"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-brand-secondary/10 border border-brand-secondary/20 flex items-center justify-center text-brand-secondary mb-6 transition-all duration-300 group-hover:bg-brand-secondary group-hover:text-white">
+                        <i class="fa-solid fa-share-nodes text-2xl"></i>
+                    </div>
+                    <h4 class="font-outfit font-extrabold text-xl mb-3 text-white">Social Media Marketing</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Establish absolute authority. We take over your social profiles, curate high-value posts, optimize descriptions, and engage your audience to generate organic revenue.
+                    </p>
+                    <ul class="space-y-2 mb-6 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Premium Graphics & Story Templates</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Captivating Copywriting & Hashtag Setup</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Active Profile & Community Growth</li>
+                    </ul>
+                    <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I'm%20interested%20in%20Social%20Media%20Branding%20services!" target="_blank" rel="noopener" class="text-xs font-bold text-brand-secondary group-hover:text-brand-accent transition-colors duration-200 flex items-center gap-2">
+                        Get SMM Strategy <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group reveal-slide-up delay-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-accent/10 rounded-bl-full transition-all duration-300 group-hover:scale-125"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 transition-all duration-300 group-hover:bg-brand-accent group-hover:text-white">
+                        <i class="fa-solid fa-bullseye text-2xl"></i>
+                    </div>
+                    <h4 class="font-outfit font-extrabold text-xl mb-3 text-white">Conversion Optimization</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Traffic is useless if it doesn't convert. We audit your landing page/website structure and construct custom sales hooks that maximize every single dollar of ad spend.
+                    </p>
+                    <ul class="space-y-2 mb-6 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Landing Page Audits & UI Design Fixes</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Compelling Ad Hook Crafting</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-secondary text-[10px]"></i> Conversion Funnel Architecture</li>
+                    </ul>
+                    <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I%20want%20to%20audit%20my%20conversion%20funnels%20for%20better%20ROAS!" target="_blank" rel="noopener" class="text-xs font-bold text-brand-secondary group-hover:text-brand-accent transition-colors duration-200 flex items-center gap-2">
+                        Get Funnel Audit <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI ESTIMATOR SECTION -->
+    <section id="calculator" class="py-20 relative bg-brand-dark/50 border-y border-white/5">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header Text -->
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-4 reveal-slide-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-secondary px-3 py-1 rounded-full bg-slate-900 border border-slate-800">Sales Forecaster</span>
+                <h3 class="font-outfit font-extrabold text-3xl sm:text-4xl">Estimate Your Meta Ads ROI</h3>
+                <p class="text-gray-400 text-sm">Slide your planned budget to see how much revenue we can generate for your brand with optimization.</p>
+            </div>
+
+            <!-- Main Interactive Card Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Left Control Box (Slides Left) -->
+                <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 space-y-6 reveal-slide-left">
+                    <h4 class="font-bold text-lg text-white pb-3 border-b border-gray-800">Campaign Parameters</h4>
+                    
+                    <!-- Parameter 1: Monthly Budget -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-300 font-medium">Monthly Ad Budget ($ USD)</span>
+                            <span class="font-extrabold text-brand-secondary" id="budgetValue">$2,500</span>
+                        </div>
+                        <input type="range" id="inputBudget" min="500" max="25000" step="100" value="2500" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-secondary">
+                        <div class="flex justify-between text-[10px] text-gray-500 font-medium">
+                            <span>$500</span>
+                            <span>$25,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Parameter 2: Avg Order Value (AOV) -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-300 font-medium">Your Product Average Value ($)</span>
+                            <span class="font-extrabold text-indigo-400" id="aovValue">$50</span>
+                        </div>
+                        <input type="range" id="inputAOV" min="10" max="500" step="5" value="50" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-primary">
+                        <div class="flex justify-between text-[10px] text-gray-500 font-medium">
+                            <span>$10</span>
+                            <span>$500</span>
+                        </div>
+                    </div>
+
+                    <!-- Parameter 3: Expected Target ROAS -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-300 font-medium">Target Campaign Return on Ad Spend (ROAS)</span>
+                            <span class="font-extrabold text-brand-accent" id="roasValue">3.5x</span>
+                        </div>
+                        <input type="range" id="inputROAS" min="1.5" max="8.0" step="0.1" value="3.5" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-accent">
+                        <div class="flex justify-between text-[10px] text-gray-500 font-medium">
+                            <span>1.5x (Average)</span>
+                            <span>8.0x (Hyper Scaling)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Results Box (Slides Right) -->
+                <div class="lg:col-span-5 rounded-3xl bg-gradient-to-br from-indigo-950 to-brand-card p-6 sm:p-8 flex flex-col justify-between border border-brand-primary/25 relative overflow-hidden reveal-slide-right">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-secondary/10 rounded-full blur-3xl"></div>
+                    
+                    <div class="space-y-6">
+                        <h4 class="font-bold text-lg text-white">Estimated Performance</h4>
+                        
+                        <!-- Main Est Revenue Dynamic Display -->
+                        <div class="p-5 rounded-2xl bg-brand-dark/40 border border-indigo-500/10 text-center">
+                            <span class="text-xs uppercase tracking-wider text-gray-400 font-medium">Estimated Monthly Revenue</span>
+                            <div class="text-4xl font-extrabold text-brand-accent mt-1 tracking-tight" id="estRevenue">$8,750</div>
+                        </div>
+
+                        <!-- Secondary Metrics Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                                <span class="text-[10px] uppercase text-gray-400">Net Return</span>
+                                <div class="text-lg font-bold text-white mt-1" id="estProfit">$6,250</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                                <span class="text-[10px] uppercase text-gray-400">Estimated Sales</span>
+                                <div class="text-lg font-bold text-white mt-1" id="estSales">175</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conversion CTA targeting directly WhatsApp -->
+                    <div class="mt-8 space-y-4">
+                        <p class="text-xs text-gray-300 text-center leading-relaxed">
+                            💡 *Estimated based on standard industry KPIs optimized by Shoikot team. Results vary.
+                        </p>
+                        <a id="calculatorCta" href="#" target="_blank" rel="noopener" class="w-full py-4 px-6 rounded-xl font-bold bg-[#25D366] hover:bg-[#1fbc57] text-white text-sm transition-all flex items-center justify-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Launch This Strategy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Block: Creative Headline & CTA to Google Drive (Slides Left) -->
+                <div class="lg:col-span-5 space-y-6 reveal-slide-left">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-secondary">Case Studies</span>
+                    <h3 class="font-outfit font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight">
+                        Our Proven <span class="text-gradient">Track Record</span> is Open Source
+                    </h3>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        We don't hide our results under confidential codes. We host actual campaign setups, real creative scripts, and performance dashboards in our shared Google Drive folder for you to explore before hiring us.
+                    </p>
+                    
+                    <div class="p-5 rounded-2xl bg-brand-card border border-white/5 space-y-3.5">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-folder text-yellow-500 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Google Drive Public Share</h4>
+                                <p class="text-xs text-gray-400">Ad creatives, target charts, ROAS sheets</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glowing Core Portfolio Button -->
+                    <a href="https://drive.google.com/drive/folders/1tl-X1o2JNSBthRYmUfAbwJkvz2Vc--bJ?usp=drive_link" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white btn-gradient w-full sm:w-auto shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+                        <i class="fa-solid fa-folder-open text-lg"></i> Open Drive Portfolio <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+                    </a>
+                </div>
+
+                <!-- Right Block: Grid of simulated portfolio achievements (Slides Right) -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-slide-right">
+                    
+                    <!-- Box 1 -->
+                    <div class="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-primary/50 transition-colors">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-[10px] bg-indigo-500/10 text-indigo-300 font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">E-COMMERCE</span>
+                                <span class="text-brand-accent font-bold text-xs"><i class="fa-solid fa-caret-up"></i> 4.8x ROAS</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Clothing Brand Scaling</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Scaled a designer wear shop from $500/month ad spend to over $4,500/month while cutting CPA by 30% using customized retargeting.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                            <span class="text-gray-500">Duration: 4 Months</span>
+                            <span class="text-brand-secondary font-semibold">Case Study Included</span>
+                        </div>
+                    </div>
+
+                    <!-- Box 2 -->
+                    <div class="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-secondary/50 transition-colors">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-[10px] bg-cyan-500/10 text-cyan-300 font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">LEAD GENERATION</span>
+                                <span class="text-brand-accent font-bold text-xs"><i class="fa-solid fa-caret-up"></i> 140+ Leads</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Real Estate Funnels</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Engineered highly converting lead-capture forms for luxurious properties, netting qualified buyers for premium real estate firms.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                            <span class="text-gray-500">Duration: 45 Days</span>
+                            <span class="text-brand-secondary font-semibold">Case Study Included</span>
+                        </div>
+                    </div>
+
+                    <!-- Box 3 -->
+                    <div class="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-accent/50 transition-colors">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-[10px] bg-emerald-500/10 text-emerald-300 font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">LOCAL SERVICE</span>
+                                <span class="text-brand-accent font-bold text-xs"><i class="fa-solid fa-caret-up"></i> 5.2x ROI</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Gym & Fitness Client Growth</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Set up Meta Ads targeting locals within a 5km radius of the facility, packing up slots with recurring monthly membership contracts.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                            <span class="text-gray-500">Duration: 3 Months</span>
+                            <span class="text-brand-secondary font-semibold">Case Study Included</span>
+                        </div>
+                    </div>
+
+                    <!-- Box 4 -->
+                    <div class="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-indigo-500/50 transition-colors">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-[10px] bg-purple-500/10 text-purple-300 font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">SAAS / DIGITAL PRODUCT</span>
+                                <span class="text-brand-accent font-bold text-xs"><i class="fa-solid fa-caret-up"></i> 3.5x ROAS</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Online Course Blueprint</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Crafted video sales hook script guidelines and custom targeted funnels to sell out complex educational programs.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                            <span class="text-gray-500">Duration: 60 Days</span>
+                            <span class="text-brand-secondary font-semibold">Case Study Included</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE META AD PREVIEWER -->
+    <section id="previewer" class="py-20 relative bg-brand-card border-t border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-slide-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-secondary px-3 py-1 rounded-full bg-slate-900 border border-slate-800">Visual Blueprint</span>
+                <h3 class="font-outfit font-extrabold text-3xl sm:text-4xl">Interactive Facebook Ad Previewer</h3>
+                <p class="text-gray-400 text-sm">Select an industry tab below to see live examples of high-converting copywriting and design frameworks we structure for Shoikot partners.</p>
+            </div>
+
+            <!-- Tab Selectors (Slides Up) -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-10 reveal-slide-up delay-100">
+                <button onclick="switchAdTab('ecommerce')" id="btnTab-ecommerce" class="ad-tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border bg-brand-primary border-brand-primary text-white">
+                    👕 E-Commerce Shop
+                </button>
+                <button onclick="switchAdTab('service')" id="btnTab-service" class="ad-tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white">
+                    🛠 Local Service
+                </button>
+                <button onclick="switchAdTab('course')" id="btnTab-course" class="ad-tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white">
+                    🎓 Online Academy
+                </button>
+            </div>
+
+            <!-- Mock Phone Display Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Highlights list (Slides Left) -->
+                <div class="lg:col-span-5 space-y-6 reveal-slide-left">
+                    <h4 class="font-outfit font-extrabold text-2xl" id="previewHeadline">Crafting the Perfect E-Commerce Funnel</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed" id="previewDesc">
+                        We hook potential customers in the first 3 seconds with powerful copywriting and dynamic creative slides, addressing painful problems and highlighting clear solutions.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded bg-brand-secondary/10 flex items-center justify-center text-brand-secondary text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm text-white">The Pattern Interrupt</h5>
+                                <p class="text-xs text-gray-400">Bold first line designed to immediately stop mobile users from scrolling by.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded bg-brand-secondary/10 flex items-center justify-center text-brand-secondary text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm text-white">Dynamic Social Proof</h5>
+                                <p class="text-xs text-gray-400">Embedding client quotes directly in ad copies to instantly lower resistance.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded bg-brand-secondary/10 flex items-center justify-center text-brand-secondary text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm text-white">Fear Of Missing Out (FOMO)</h5>
+                                <p class="text-xs text-gray-400">Compelling call-to-actions pushing limits on stock availability or timing discount.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I%20want%20you%20to%20write%20high-converting%20ad%20copies%20for%20my%20business!" target="_blank" rel="noopener" class="w-full sm:w-auto px-6 py-3 bg-slate-900 border border-slate-800 hover:border-brand-secondary text-gray-300 hover:text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-pencil text-brand-secondary"></i> Build My Ads Copy Setup
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Phone Preview Window (Slides Right) -->
+                <div class="lg:col-span-7 flex justify-center reveal-slide-right">
+                    <div class="w-full max-w-sm border-8 border-slate-800 rounded-[40px] bg-slate-950 p-4 shadow-2xl relative">
+                        <!-- Speaker top cutout -->
+                        <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-28 h-4 bg-slate-800 rounded-full z-20"></div>
+                        
+                        <!-- Meta Ad Container -->
+                        <div class="bg-brand-card rounded-[28px] overflow-hidden p-3.5 border border-white/5 space-y-3.5 relative">
+                            <!-- Facebook Header Mock -->
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center font-bold text-white text-xs">SD</div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h5 class="font-extrabold text-xs text-white">Your Business Page</h5>
+                                            <i class="fa-solid fa-circle-check text-[#1877F2] text-[10px]" title="Verified Page"></i>
+                                        </div>
+                                        <p class="text-[9px] text-gray-400">Sponsored · Paid Campaign</p>
+                                    </div>
+                                </div>
+                                <button class="text-gray-400"><i class="fa-solid fa-ellipsis"></i></button>
+                            </div>
+
+                            <!-- Ad Primary text dynamically changed -->
+                            <p class="text-[11px] sm:text-xs text-gray-200 leading-relaxed" id="mockPrimaryText">
+                                tired of watching competitor stores generate endless orders while yours gets flat clicks? 🎯 We created a system that dials down on high-intent shoppers, lowering your purchase costs by 45% within three weeks. Check out our real case files! 👇
+                            </p>
+
+                            <!-- Ad Creative Mock Banner with custom inner layouts -->
+                            <div class="relative rounded-xl overflow-hidden aspect-[16/10] bg-slate-900 flex items-center justify-center border border-white/10 group">
+                                <img id="mockImage" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 group-hover:scale-105" alt="Marketing Performance Blueprint" onerror="this.src='https://placehold.co/600x400/030712/06B6D4?text=Shoikot+Digital+Hub'">
+                                <!-- Custom Interactive overlay text badge inside image -->
+                                <div class="absolute bottom-3 left-3 bg-brand-dark/90 backdrop-blur border border-white/10 p-2.5 rounded-lg">
+                                    <p class="text-[9px] font-bold uppercase tracking-wider text-brand-secondary">Case File: 0214</p>
+                                    <p class="text-[13px] font-extrabold text-white" id="mockImageBadge">+245% ROAS Growth</p>
+                                </div>
+                            </div>
+
+                            <!-- Facebook Headline & Action Banner -->
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-white/5 flex items-center justify-between gap-2">
+                                <div class="space-y-0.5">
+                                    <p class="text-[8px] text-gray-400 uppercase tracking-widest" id="mockDomain">SHOPNOW.PROFIT.COM</p>
+                                    <h6 class="font-bold text-xs text-white tracking-tight" id="mockHeadline">Claim Your 4.8x ROAS Funnel Template</h6>
+                                </div>
+                                <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I'm%20impressed%20by%20your%20Interactive%20Meta%20Ad%20mockup!%20I%20want%20to%20discuss%20pricing!" target="_blank" rel="noopener" class="bg-gray-800 hover:bg-gray-700 text-white font-bold text-[10px] px-3.5 py-2 rounded-lg transition-colors shrink-0 uppercase tracking-wider">
+                                    Get Offer
+                                </a>
+                            </div>
+
+                            <!-- Interaction bar -->
+                            <div class="flex items-center justify-between text-gray-400 text-[10px] pt-1">
+                                <div class="flex items-center gap-3">
+                                    <span class="flex items-center gap-1 hover:text-white transition-colors cursor-pointer"><i class="fa-regular fa-thumbs-up"></i> 1.2k</span>
+                                    <span class="flex items-center gap-1 hover:text-white transition-colors cursor-pointer"><i class="fa-regular fa-comment"></i> 140 Comments</span>
+                                </div>
+                                <span class="hover:text-white transition-colors cursor-pointer"><i class="fa-regular fa-share-from-square"></i> 88 Shares</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-24 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16 space-y-4 reveal-slide-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-secondary">Answering Concerns</span>
+                <h3 class="font-outfit font-extrabold text-3xl sm:text-4xl">Frequently Asked Questions</h3>
+                <p class="text-gray-400 text-sm">Everything you need to know about starting your digital growth partnership with Shoikot Digital Hub.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden transition-colors border border-white/5 reveal-slide-up delay-100">
+                    <button onclick="toggleFaq(1)" class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none hover:bg-white/[0.02]">
+                        <span class="font-semibold text-sm sm:text-base text-white">How much budget do I need to start Meta Ads?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-1"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-xs sm:text-sm text-gray-400 leading-relaxed" id="faqContent-1">
+                        We recommend a minimum initial test budget of $15 - $20 USD per day (approx $450 - $600 per month). This allows Facebook algorithms to properly go through the learning phase and compile enough buyer data to build lookalike and target models.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="glass-panel rounded-2xl overflow-hidden transition-colors border border-white/5 reveal-slide-up delay-200">
+                    <button onclick="toggleFaq(2)" class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none hover:bg-white/[0.02]">
+                        <span class="font-semibold text-sm sm:text-base text-white">What niches do you guys specialize in?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-2"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-xs sm:text-sm text-gray-400 leading-relaxed" id="faqContent-2">
+                        We have extensive, proven results in E-commerce (clothing, accessory, home decor niches), local service industries (gyms, dentists, home repairs), and digital educational academies trying to scale lead generation databases.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="glass-panel rounded-2xl overflow-hidden transition-colors border border-white/5 reveal-slide-up delay-300">
+                    <button onclick="toggleFaq(3)" class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none hover:bg-white/[0.02]">
+                        <span class="font-semibold text-sm sm:text-base text-white">How fast will I see actual profits/leads?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-3"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-xs sm:text-sm text-gray-400 leading-relaxed" id="faqContent-3">
+                        While pixel integrations and custom setup take 3-5 days, initial traffic starts generating immediate engagement or sales. Significant, predictable conversion optimization patterns typically settle by the end of week two.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="glass-panel rounded-2xl overflow-hidden transition-colors border border-white/5 reveal-slide-up delay-400">
+                    <button onclick="toggleFaq(4)" class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none hover:bg-white/[0.02]">
+                        <span class="font-semibold text-sm sm:text-base text-white">Do you create creative graphics and video ads too?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-4"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-xs sm:text-sm text-gray-400 leading-relaxed" id="faqContent-4">
+                        Yes! We provide complete hook copywriting guidelines, outline high-retention video layouts, and design stunning, click-friendly custom social images that match your exact visual brand aesthetic.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION BANNER -->
+    <section class="py-16 px-4 max-w-7xl mx-auto relative z-10 reveal-slide-up">
+        <div class="rounded-3xl bg-gradient-to-tr from-brand-primary/90 to-brand-secondary/90 p-8 sm:p-12 md:p-16 text-center relative overflow-hidden shadow-2xl">
+            <!-- Graphical pattern inside CTA banner -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+                <h3 class="font-outfit font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
+                    Ready to Stop Guessing & Start Scaling?
+                </h3>
+                <p class="text-sm sm:text-base text-white/90 max-w-xl mx-auto leading-relaxed">
+                    Book a free, 15-minute strategical blueprint audit. We will review your current Facebook Page, layout optimization plans, and estimate your target ROI with no obligations.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I'm%20ready%20to%20scale%20my%20business%20using%20Meta%20Ads!" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-[#25D366] hover:bg-white hover:text-brand-dark text-white shadow-xl transition-all flex items-center justify-center gap-2 transform active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Secure Strategy Session
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/shoikotdigital" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all flex items-center justify-center gap-2 transform active:scale-95">
+                        <i class="fa-brands fa-facebook text-xl"></i> Follow Shoikot Digital
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-brand-card border-t border-gray-900 pt-16 pb-8 text-xs sm:text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+            <!-- Brand Column -->
+            <div class="md:col-span-5 space-y-4">
+                <a href="#home" class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-chart-line text-white text-sm"></i>
+                    </div>
+                    <span class="font-outfit font-extrabold text-lg text-white">Shoikot Digital</span>
+                </a>
+                <p class="max-w-xs leading-relaxed">
+                    A premium marketing partner maximizing business scale. We combine precise budget management with creative psychology to capture clients.
+                </p>
+                <div class="flex items-center gap-3">
+                    <a href="https://www.facebook.com/shoikotdigital" target="_blank" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-primary transition-colors">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/8801842702810" target="_blank" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-accent transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1tl-X1o2JNSBthRYmUfAbwJkvz2Vc--bJ?usp=drive_link" target="_blank" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-yellow-500 transition-colors" title="Google Drive Link">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Links Column -->
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="text-white font-bold text-xs uppercase tracking-wider">Agency Navigation</h5>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="hover:text-white transition-colors">Digital Solutions</a></li>
+                    <li><a href="#calculator" class="hover:text-white transition-colors">Campaign Estimator</a></li>
+                    <li><a href="#portfolio" class="hover:text-white transition-colors">Results Portfolio</a></li>
+                    <li><a href="#previewer" class="hover:text-white transition-colors">Interactive Ads Preview</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Info / Contact info -->
+            <div class="md:col-span-4 space-y-4">
+                <h5 class="text-white font-bold text-xs uppercase tracking-wider">Fast Contact</h5>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-secondary"></i> (+88) 01842702810 (Direct Call)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-secondary"></i> info@shoikotdigital.com</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-secondary"></i> Dhaka, Bangladesh</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-gray-900/60 text-center space-y-2">
+            <p>&copy; 2026 Shoikot Digital Hub. All Rights Reserved.</p>
+            <p class="text-[10px] text-gray-600">Disclaimer: Shoikot Digital Hub is an independent agency specializing in social growth services. We are not officially affiliated, sponsored, or endorsed by Meta Inc. or Facebook Inc.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING CHAT BUTTON (WHATSAPP) -->
+    <div class="fixed bottom-6 right-6 z-50 group flex flex-col items-end gap-2">
+        <!-- Floating Prompt Bubble -->
+        <div class="bg-brand-card border border-white/10 px-4 py-2.5 rounded-2xl shadow-2xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none hidden sm:block">
+            <p class="text-[11px] text-gray-300 font-medium">Have questions? Ask Shoikot on WhatsApp!</p>
+        </div>
+        
+        <!-- Glowing Ring Action Button -->
+        <a href="https://wa.me/8801842702810?text=Hi%20Shoikot,%20I'm%20visiting%20your%20website%20and%20want%20to%20learn%20more%20about%20your%20ad%20campaigns!" target="_blank" rel="noopener" class="w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 relative">
+            <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-35 animate-ping"></span>
+            <i class="fa-brands fa-whatsapp text-2xl relative z-10"></i>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT SYSTEM ENGINE -->
+    <script>
+        // Dynamic Intersection Observer setup for smooth scroll-slide animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal-slide-up, .reveal-slide-left, .reveal-slide-right');
+            
+            const observerOptions = {
+                root: null, // Viewport
+                threshold: 0.12, // Trigger when 12% of element is visible
+                rootMargin: "0px 0px -50px 0px" // Trigger slightly before element enters fully
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        // Stop observing once animated into place
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+        });
+
+        // 1. Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            }
+        });
+
+        // Close mobile menu on links click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+
+        // Header Background Scroll Effect
+        const mainHeader = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('bg-brand-dark/90', 'backdrop-blur-md', 'shadow-2xl');
+            } else {
+                mainHeader.classList.remove('bg-brand-dark/90', 'backdrop-blur-md', 'shadow-2xl');
+            }
+        });
+
+        // 2. ROI Estimator Calculator
+        const inputBudget = document.getElementById('inputBudget');
+        const inputAOV = document.getElementById('inputAOV');
+        const inputROAS = document.getElementById('inputROAS');
+
+        const budgetValue = document.getElementById('budgetValue');
+        const aovValue = document.getElementById('aovValue');
+        const roasValue = document.getElementById('roasValue');
+
+        const estRevenue = document.getElementById('estRevenue');
+        const estProfit = document.getElementById('estProfit');
+        const estSales = document.getElementById('estSales');
+        const calculatorCta = document.getElementById('calculatorCta');
+
+        function updateCalculator() {
+            const budget = parseFloat(inputBudget.value);
+            const aov = parseFloat(inputAOV.value);
+            const roas = parseFloat(inputROAS.value);
+
+            // Display sliders selected value
+            budgetValue.textContent = `$${budget.toLocaleString()}`;
+            aovValue.textContent = `$${aov}`;
+            roasValue.textContent = `${roas}x`;
+
+            // Core Math
+            const revenue = budget * roas;
+            const profit = revenue - budget;
+            const sales = Math.round(revenue / aov);
+
+            // Render Output fields
+            estRevenue.textContent = `$${Math.round(revenue).toLocaleString()}`;
+            estProfit.textContent = `$${Math.round(profit).toLocaleString()}`;
+            estSales.textContent = sales.toLocaleString();
+
+            // Dynamic WhatsApp prompt based on calculation data
+            const waText = encodeURIComponent(
+                `Hi Shoikot, I estimated my Meta campaign using your website ROI Calculator!\n\nParameters:\n- Monthly Budget: $${budget}\n- Product AOV: $${aov}\n- Target ROAS: ${roas}x\n\nEstimated Revenue: $${Math.round(revenue)}. Can you help me launch this?`
+            );
+            calculatorCta.href = `https://wa.me/8801842702810?text=${waText}`;
+        }
+
+        // Add Listeners
+        inputBudget.addEventListener('input', updateCalculator);
+        inputAOV.addEventListener('input', updateCalculator);
+        inputROAS.addEventListener('input', updateCalculator);
+
+        // Initial setup run
+        updateCalculator();
+
+
+        // 3. Dynamic Interactive Ads Previewer Tabs Logic
+        const adTabsData = {
+            ecommerce: {
+                headline: "Scaling E-Commerce Conversions with Shoikot Methods",
+                desc: "We build structured shopping funnels, scaling your store with target interest profiling, custom tracking APIs, and hyper-engaging scroll-stopping copy.",
+                primaryText: "Tired of watching competitor shops print infinite orders while your dashboard gets flat clicks? 🎯 Our dynamic Meta Ads setups drill down specifically on ready-to-buy audiences, lowering your acquisition costs by 45% in 21 days! Click to steal our blueprint layout. 👇",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+                badge: "5.2x ROAS Ecom Setup",
+                domain: "ECOM-SCALE.COM",
+                heading: "Unlock My 4.8x ROAS Shopping Funnel"
+            },
+            service: {
+                headline: "Predictable Lead Flow for Service Providers",
+                desc: "Never wake up questioning where your next booking is coming from. Our local ads trigger high-volume phone bookings and lead form fills on autopilots.",
+                primaryText: "Empty slots on your schedule represent wasted operational overhead. 🛠️ Let's install our automated high-intent booking funnel targeting premium neighborhoods in your city. Stop guessing, start filling slots! Book a strategy call. 👇",
+                image: "https://images.unsplash.com/photo-1521791136364-7286a09a3150?auto=format&fit=crop&q=80&w=600",
+                badge: "+180 Hot Leads/Month",
+                domain: "BOOKINGS.AGENCYHUB.COM",
+                heading: "Pack Your Booking Calendar This Month"
+            },
+            course: {
+                headline: "Instant Registration Scaling for Academy Creators",
+                desc: "Translate online knowledge into recurring signups. We target aspiring digital students, optimize video creative assets, and scaling registration rates.",
+                primaryText: "You crafted a world-class program, but empty courses make no impact. 🎓 We specialize in structuring high-converting webinar hooks and student acquisition blueprints that sell programs out. Grab the registration strategy! 👇",
+                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600",
+                badge: "+380% Class Enrollments",
+                domain: "ACADEMY-SCALE.NET",
+                heading: "Claim the Free Course Scaling Strategy"
+            }
+        };
+
+        function switchAdTab(tabId) {
+            // Update active styling on tabs
+            document.querySelectorAll('.ad-tab-btn').forEach(btn => {
+                btn.className = 'ad-tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white';
+            });
+
+            const activeBtn = document.getElementById(`btnTab-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = 'ad-tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border bg-brand-primary border-brand-primary text-white';
+            }
+
+            // Update content elements in the phone mockup
+            const data = adTabsData[tabId];
+            document.getElementById('previewHeadline').textContent = data.headline;
+            document.getElementById('previewDesc').textContent = data.desc;
+            
+            // Phone mock updates
+            document.getElementById('mockPrimaryText').textContent = data.primaryText;
+            document.getElementById('mockImage').src = data.image;
+            document.getElementById('mockImageBadge').textContent = data.badge;
+            document.getElementById('mockDomain').textContent = data.domain;
+            document.getElementById('mockHeadline').textContent = data.heading;
+        }
+
+        // 4. Accordion Toggle Logic
+        function toggleFaq(index) {
+            const content = document.getElementById(`faqContent-${index}`);
+            const icon = document.getElementById(`faqIcon-${index}`);
+
+            const isHidden = content.classList.contains('hidden');
+
+            // Hide all accordions first
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`faqContent-${i}`).classList.add('hidden');
+                document.getElementById(`faqIcon-${i}`).style.transform = 'rotate(0deg)';
+            }
+
+            // If selected was hidden, show it
+            if (isHidden) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // 5. Live counter simulation inside Mock Visual Dashboard
+        let liveRevenueValue = 248340;
+        setInterval(() => {
+            const addValue = Math.floor(Math.random() * 8) + 1;
+            liveRevenueValue += addValue;
+            document.getElementById('liveRev').textContent = `$${liveRevenueValue.toLocaleString()}`;
+        }, 3500);
+    </script>
+</body>
+</html>
